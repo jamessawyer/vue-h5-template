@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint --fix \"./src/**/*.{js,vue,json}\"",
+    "format": "prettier --write \"./src/**/*.{js,vue,json,css,scss}\""
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -19,7 +20,22 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.1.2",
     "prettier": "^2.5.1",
     "vue-template-compiler": "^2.6.11"
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue,json}": [
+      "eslint --fix"
+    ],
+    "src/**/*.{js,vue,json,css,scss}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
