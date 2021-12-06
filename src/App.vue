@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Hello App!</h1>
+    <p>
+      <router-link to="/">Go to Home</router-link>
+      <router-link to="/about">Go to about</router-link>
+    </p>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { add } from '@utils/time.js'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components: {},
+  computed: {},
+  mounted() {
+    console.log('VUE_APP_SERVER_URL')
+    console.log(process.env.VUE_APP_SERVER_URL)
+    console.log('----------------------------------------')
+    console.log('NODE_ENV', add(20, 20))
+    console.log(process.env.NODE_ENV)
   }
 }
 </script>
