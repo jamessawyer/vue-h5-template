@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:vue/recommended",
+    "@vue/prettier"
+  ],
+  "plugins": ["prettier"],
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-unused-vars": 1,
+    "no-plusplus": 0,
+    "no-var": 2,
+    "prefer-const": 1
+  }
+}
