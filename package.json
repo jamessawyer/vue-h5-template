@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve --mode development --port 8080 --open",
-    "dev:staging": "vue-cli-service serve --mode staging --port 8080 --open",
-    "dev:prod": "vue-cli-service serve --mode production --port 8080 --open",
+    "start": "vue-cli-service serve --mode development",
+    "dev:staging": "vue-cli-service serve --mode staging",
+    "dev:prod": "vue-cli-service serve --mode production",
     "build": "vue-cli-service build --mode production",
     "build:dev": "vue-cli-service build --mode development",
     "build:staging": "vue-cli-service build --mode staging",
