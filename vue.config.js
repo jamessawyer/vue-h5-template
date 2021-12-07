@@ -1,4 +1,6 @@
 const path = require('path')
+const autoprefixer = require('autoprefixer')
+const pxtoviewport = require('postcss-px-to-viewport')
 
 function resolve(dir) {
   return path.join(__dirname, dir)
@@ -16,7 +18,19 @@ module.exports = {
       .set('@store', resolve('src/store'))
       .set('@utils', resolve('src/utils'))
   },
-  publicPath: process.env.NODE_ENV === 'production' ? './' : './',
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          autoprefixer(),
+          pxtoviewport({
+            viewportWidth: 375
+          })
+        ]
+      }
+    }
+  },
+  publicPath: process.env.NODE_ENV === 'production' ? '/dist/' : './',
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: false,
   devServer: {
