@@ -1,8 +1,9 @@
 import Vue from 'vue'
+import VConsole from 'vconsole'
 import store from '@/store'
 import router from './router'
 import App from './App.vue'
-import VConsole from 'vconsole'
+import { getUA, isIphoneX } from '@/utils'
 
 Vue.config.productionTip = false
 
@@ -22,6 +23,21 @@ if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line no-unused-vars
   const vConsole = new VConsole()
 }
+
+// 直接在body上添加全局的相应的设备信息
+;(function () {
+  const { isAndroid, isiOS } = getUA()
+  if (isAndroid) {
+    document.body.classList.add('android')
+  }
+  if (isiOS) {
+    document.body.classList.add('ios')
+
+    if (isIphoneX) {
+      document.body.classList.add('iphonex')
+    }
+  }
+})()
 
 new Vue({
   store,
