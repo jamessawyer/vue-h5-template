@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import VConsole from 'vconsole'
+import { Toast } from 'vant'
 import store from '@/store'
 import router from './router'
 import App from './App.vue'
 import { getUA, isIphoneX } from '@/utils'
 
 Vue.config.productionTip = false
+Vue.use(Toast)
 
 // 生产环境去掉console
 if (process.env.NODE_ENV === 'production') {
