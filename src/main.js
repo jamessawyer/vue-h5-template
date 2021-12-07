@@ -1,12 +1,15 @@
 import Vue from 'vue'
 import VConsole from 'vconsole'
 import { Toast } from 'vant'
-import store from '@/store'
+import store from '@store'
 import router from './router'
+import { getUA, isIphoneX } from '@utils'
+import Bridge from '@common/bridge.js'
 import App from './App.vue'
-import { getUA, isIphoneX } from '@/utils'
 
 Vue.config.productionTip = false
+Vue.prototype.$bridge = Bridge
+
 Vue.use(Toast)
 
 // 生产环境去掉console
