@@ -19,7 +19,7 @@ module.exports = {
     config.resolve.alias
       .set('@assets', resolve('src/assets'))
       .set('@common', resolve('src/common'))
-      .set('@components', resolve('src/components'))
+      .set('@comp', resolve('src/components'))
       .set('@pages', resolve('src/pages'))
       .set('@store', resolve('src/store'))
       .set('@utils', resolve('src/utils'))
