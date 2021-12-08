@@ -9,6 +9,12 @@ function resolve(dir) {
 module.exports = {
   outputDir: 'dist',
   chainWebpack: (config) => {
+    // 修改title
+    // https://blog.csdn.net/wenfu814/article/details/108322897
+    config.plugin('html').tap((args) => {
+      args[0].title = process.env.VUE_APP_TITLE || 'AI FUN'
+      return args
+    })
     // 修改文件引入自定义路径
     config.resolve.alias
       .set('@assets', resolve('src/assets'))
