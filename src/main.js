@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'development') {
   if (isiOS) {
     document.body.classList.add('ios')
 
-    if (isIphoneX) {
+    if (isIphoneX()) {
       document.body.classList.add('iphonex')
     }
   }
